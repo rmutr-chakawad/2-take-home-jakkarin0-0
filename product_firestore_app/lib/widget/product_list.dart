@@ -22,7 +22,7 @@ class ProductList extends StatelessWidget {
 
         builder: (context,snapshot){
           if(snapshot.data!.isEmpty){
-            return const Center(child: Text('ยังไม่มีข้อมูลสินค้า'),);
+            return const Center(child:Column(children: [ SizedBox(height: 300,), Text('ยังไม่มีข้อมูลสินค้า'),Text('กรุณาคลิ๊ก + มุมบนขวาเพื่อเพิ่มสินค้า')],));
           
           }
           
