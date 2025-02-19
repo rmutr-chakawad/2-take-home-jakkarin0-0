@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:product_firestore_app/models/product_model.dart';
+import 'package:product_firestore_app/widget/product_form.dart';
 import 'package:product_firestore_app/widget/product_popup.dart';
 
 class ProductItem extends StatelessWidget {
@@ -23,7 +24,10 @@ class ProductItem extends StatelessWidget {
         
         leading: Text(product.productName,style: const TextStyle(fontSize: 20),),
         title: Text('ราคา ${product.price.toStringAsFixed(2)} บาท',textAlign: TextAlign.right,),
-        trailing: const Icon(Icons.chevron_right),
+        trailing: IconButton(onPressed: (){
+          showBottomSheet(context: context, builder: (context)=> ProductForm(product: product,));
+        }, icon: const Icon(Icons.chevron_right),)
+        
         
 
       ),
